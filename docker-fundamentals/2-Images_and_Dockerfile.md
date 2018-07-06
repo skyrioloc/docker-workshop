@@ -31,3 +31,14 @@ docker run -p 8080:8080 example1
 ```
 
 ## Dockerfile commands
+(reference: https://docs.docker.com/engine/reference/builder)
+- `FROM` defines the base image
+- `RUN` will execute any commands in a new layer on top of the current image and commit the results.
+- `CMD` represents the command that will be executed after all the layers have been istantiated. There can be only one CMD command for Dockerfile
+- `EXPOSE` is used to specify port on container that will be open for the host machine (open port container side)
+
+
+## Scalability and Expandability
+
+- What if we want to pass from Tomcat 8.5 to another version? 
+    - We simple change the Tomcat version into Dockerfile
