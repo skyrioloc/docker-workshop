@@ -26,6 +26,6 @@ In order to build an image, you will need a `Dockerfile`.
 Move in /dockerfile/image1 directory and do:
 
 ```
-cd ./dockerfile/image1
-docker build -t test-image .
+cd ./dockerfile/example1
+docker build -t example1 .
 ```
