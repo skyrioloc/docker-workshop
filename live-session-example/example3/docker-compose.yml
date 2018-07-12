@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    container_name: mysql.c
+    build:
+      context: ./db-utils
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db-utils/data:/var/lib/mysql
+    environment:
+      MYSQL_PASSWORD: "root"
+  app:
+    container_name: sample-spring-boot.c
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: target/sample-spring-boot-0.0.1-SNAPSHOT.jar
+    ports:
+      - "8080:8080"
+    depends_on:
+          - db
