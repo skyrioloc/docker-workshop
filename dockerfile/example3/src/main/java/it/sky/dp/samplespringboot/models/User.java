@@ -1,16 +1,28 @@
 package it.sky.dp.samplespringboot.models;
 
-import org.springframework.data.annotation.Id;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
     private String firstName;
     private String lastName;
 
     public User(){
 
+    }
+
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -29,8 +41,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
