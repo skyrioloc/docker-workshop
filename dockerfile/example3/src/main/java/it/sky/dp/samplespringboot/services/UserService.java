@@ -1,8 +1,5 @@
 package it.sky.dp.samplespringboot.services;
-
 import it.sky.dp.samplespringboot.models.User;
-
-
 
 public interface UserService {
 

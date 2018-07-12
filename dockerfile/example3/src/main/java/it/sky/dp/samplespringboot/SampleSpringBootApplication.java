@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({"it.sky.dp.samplespringboot"})
 public class SampleSpringBootApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SampleSpringBootApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SampleSpringBootApplication.class, args);
+    }
 }

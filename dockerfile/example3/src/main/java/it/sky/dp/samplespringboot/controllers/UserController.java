@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
-
 @RestController
 public class UserController {
 
@@ -17,7 +15,7 @@ public class UserController {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @PostMapping(value = "/users", consumes = "application/json")
-    public void postUser(@RequestBody User user){
+    public void postUser(@RequestBody User user) {
         log.info("[POSTED]" + user.toString());
         userService.createUser(user);
     }
