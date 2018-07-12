@@ -54,3 +54,18 @@ docker logs -f sample.c
 ```
 docker run -d --name sample.c -p 8080:8080 --link mysql.c sample-spring-boot:latest
 ```
+## 3rd Part - Put all together
+#### Docker Compose
+```
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+  redis:
+    image: "redis:alpine"
+```
+```
+docker-compose -d up
+```
