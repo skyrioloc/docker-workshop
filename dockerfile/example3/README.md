@@ -20,11 +20,19 @@ docker exec -it mysql.c bash
 #### Dockerfile
 ```
 FROM mysql:5.7
+VOLUME /var/lib/mysql
+ENV MYSQL_ROOT_PASSWORD=root
+ADD init.sql /docker-entrypoint-initdb.d
+EXPOSE 3306
 ...
 ```
 #### Build Dockerfile
 ```sh
-docker build -t docker_ws_mysql .
+docker build -t mysql.docker_ws:1.0 .
+```
+#### Run with Volume
+```sh
+docker run -d --name mysql.c -p 3306:3306 -v data:/var/lib/mysql mysql.docker_ws:1.0
 ```
 ## 2nd Part - Java App
 #### Dockerfile

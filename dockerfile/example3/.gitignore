@@ -1,3 +1,4 @@
+db-utils/data/*
 .idea/*
 .DS_STORE
 target/*
