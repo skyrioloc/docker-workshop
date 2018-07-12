@@ -24,7 +24,6 @@ VOLUME /var/lib/mysql
 ENV MYSQL_ROOT_PASSWORD=root
 ADD init.sql /docker-entrypoint-initdb.d
 EXPOSE 3306
-...
 ```
 #### Build Dockerfile
 ```sh
@@ -86,7 +85,7 @@ services:
 ```
 docker-compose up -d —build
 ```
-#### Put all inside a script
+#### (Optional) Put all inside a script
 ```
 #!/bin/bash
 echo "Building sample-spring-boot..."
