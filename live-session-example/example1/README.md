@@ -27,6 +27,15 @@ docker run -p 8080:8080 example1
 
 We are mapping the host port 8080 to the container port 8080.
 
+### Result
+Let's perform http requests to:
+```
+GET localhost:8080/myapp/servlet1
+```
+```
+POST localhost:8080/myapp/servlet2
+```
+
 
 ## Scalability and Expandability
 
